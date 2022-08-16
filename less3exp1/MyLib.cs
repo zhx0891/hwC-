@@ -1,23 +1,27 @@
 public static class MyLib
 {
-    public static int numToStep(int num, int step)
+    public static int numToStep(int n, int step)
     {
-        int incr = num;
+        int incr = n;
 
-        for (int i = 1; i != step; i++)
+        for (int i = 1; i!=step; i++)
         {
-            num = num * incr;
+            n = n * incr;
         }
-        return num;
+        return n;
     }
 
     public static int getIndexes(int num)   
     {
         int digit = 10;
-        int stp =1;  
+        int stp =1;
+        
+
         while (num > digit)
         {
-            digit = numToStep (digit, stp);
+            stp++;
+            digit = numToStep (10, stp);
+            System.Console.WriteLine(" "+digit+" "+stp);
         }
         return stp;
     }
