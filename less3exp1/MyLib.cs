@@ -21,8 +21,19 @@ public static class MyLib
         {
             stp++;
             digit = numToStep (10, stp);
-            System.Console.WriteLine(" "+digit+" "+stp);
         }
         return stp;
     }
+
+    public static int [] intToArray(int num, int count)
+{
+int [] arr = new int [count];
+for(int i = (count-1); i >=0; i--)
+{
+ System.Console.WriteLine(i);
+//  int r =numToStep (10, count ); 
+//  System.Console.WriteLine(r);  
+}
+return arr ;
+}
 }
