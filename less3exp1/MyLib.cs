@@ -27,19 +27,21 @@ public static class MyLib
 
     public static int[] intToArray(int num, int count)
     {
-        int i, x = 0;
+        int i, x = 0, y=0;
         int[] arr = new int[count];
-        for (i = (count-1); i >= 0; i--)
+        for (i = (count - 1); i >= 0; i--)
         {
             x++;
-            // if (i == 0 )
-            // {
-                arr[i] = num % (numToStep(10, x));
-            // }
-            // else 
-            // {
-            //     arr[i] = arr[i]/numToStep(10, i+1);   
-            // }
+
+            if (i == arr.Length - 1)
+            {
+                 arr[i] = num % (numToStep(10, x));
+             }
+            else
+            {
+                y++;
+                arr[i] = (num / (numToStep(10, y)))%10;
+            }
             System.Console.WriteLine(arr[i] + " " + i);
         }
         return arr;
