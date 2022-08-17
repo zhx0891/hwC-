@@ -4,36 +4,41 @@ public static class MyLib
     {
         int incr = n;
 
-        for (int i = 1; i!=step; i++)
+        for (int h = 1; h != step; h++)
         {
             n = n * incr;
         }
         return n;
     }
 
-    public static int getIndexes(int num)   
+    public static int getIndexes(int num)
     {
         int digit = 10;
-        int stp =1;
-        
+        int stp = 1;
+
 
         while (num > digit)
         {
             stp++;
-            digit = numToStep (10, stp);
+            digit = numToStep(10, stp);
         }
         return stp;
     }
 
-    public static int [] intToArray(int num, int count)
-{
-int [] arr = new int [count];
-for(int i = (count-1); i >=0; i--)
-{
- System.Console.WriteLine(i);
-//  int r =numToStep (10, count ); 
-//  System.Console.WriteLine(r);  
-}
-return arr ;
-}
+    public static int[] intToArray(int num, int count)
+    {
+        int i, x = 0;
+        int[] arr = new int[count];
+        for (i = 0; (count-1) > i; i++)
+        {
+            x++;
+            arr[i] = num / (numToStep(10, x));
+            if (i > 0)
+            {
+                arr[i] = arr[i]%10;
+            }
+            System.Console.WriteLine(arr[i]);
+        }
+        return arr;
+    }
 }
