@@ -1,4 +1,4 @@
-﻿Console.WriteLine("?");
-int a = Convert.ToInt32(Console.ReadLine());
-int ind = MyLib .getIndexes (a);
-System.Console.WriteLine( MyLib .intToArray (a, ind ));
+﻿// Console.WriteLine("?");
+int a = 123456; //
+int ind = MyLib.getIndexes(a);
+MyLib.intToArray(a, ind);

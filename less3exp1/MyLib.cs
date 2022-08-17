@@ -29,15 +29,18 @@ public static class MyLib
     {
         int i, x = 0;
         int[] arr = new int[count];
-        for (i = 0; (count-1) > i; i++)
+        for (i = (count-1); i >= 0; i--)
         {
             x++;
-            arr[i] = num / (numToStep(10, x));
-            if (i > 0)
-            {
-                arr[i] = arr[i]%10;
-            }
-            System.Console.WriteLine(arr[i]);
+            // if (i == 0 )
+            // {
+                arr[i] = num % (numToStep(10, x));
+            // }
+            // else 
+            // {
+            //     arr[i] = arr[i]/numToStep(10, i+1);   
+            // }
+            System.Console.WriteLine(arr[i] + " " + i);
         }
         return arr;
     }
