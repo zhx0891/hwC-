@@ -1,15 +1,6 @@
-﻿// Console.WriteLine("?");
-int a = 111111; //
-// int count = 0;
+﻿Console.WriteLine("?");
+int a = Convert .ToInt32(Console .ReadLine());
 int ind = MyLib.getIndexes(a);
-int [] arrNum = new int [ind];
+int[] arrNum = new int[ind];
 arrNum = MyLib.intToArray(a, ind);
-for (int i = arrNum.Length/2; i!=0; i--)
-{
-    if(arrNum [i]!=arrNum[arrNum.Length^i])
-    {
-        System.Console.WriteLine(" it's not a palindrome ");
-        break ;
-    }
-    System.Console.WriteLine(" this is palindrome ");
-}
+System.Console.WriteLine(MyLib .checkPalindrom(arrNum));
