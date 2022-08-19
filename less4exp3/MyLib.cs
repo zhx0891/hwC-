@@ -52,22 +52,21 @@ public static class MyLib
         int summ = 0;
         for (int i = 0; i < arr.Length; i++)
         {
-            summ=summ + arr[i];
+            summ = summ + arr[i];
         }
-        return summ ;
+        return summ;
     }
 
     public static void showMeYourArrrr()
-{
-int [] arr = new int [8];
-for (int i =0; i < arr.Length; i++)
-{
-    int e =Random .Next(1,101);
-    arr[i]=e;
-// arr[i]=Random.Next(1, 101);
-System.Console.Write(arr[i] + " ");
-} 
-}
+    {
+        int[] arr = new int[8];
+        Random rnd = new Random();
+        for (int i = 0; i < arr.Length; i++)
+        {
+            arr[i] = rnd.Next(1, 101);
+            System.Console.Write(arr[i] + " ");
+        }
+    }
 
 
 }
