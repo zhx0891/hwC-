@@ -91,7 +91,7 @@ public static class MyLib
 
         for (int i = 0; i < ind; i++)
         {
-            // System.Console.WriteLine( Convert .ToInt32(strBinNum[i]) );
+            
             if ((Convert.ToInt32(strBinNum[i]) == 49))
             {
                 digNum = digNum + numToStep(2, (ind - i));
@@ -100,21 +100,43 @@ public static class MyLib
         }
         return digNum;
     }
-    public static String  giveMeNumSys(string digNum, int ss)
+    
+    // public static string arrayToString(string [] arr)
+    // {
+    //     StringBuilder str = 
+    //     for(int i=0; i < arr.Length ; i++)
+    //     {
+    //         System.Console.Write(arr[i]);
+    //     }
+    // }
+    
+    
+    public static void   giveMeNumSys(string digNum, int ss)
     {
-        string SysNum ="    test";
+        
         string[] arr = new string [32];
         int workNum = Convert .ToInt32(digNum);
-        System.Console.WriteLine(workNum );
+        int ind =0;
+
         for( int i = 0 ; workNum  > 0; i++)
         {
             arr[i] = Convert .ToString (workNum%ss);
             workNum = workNum /ss;
-            System.Console.WriteLine($" значение {arr[i]} индекс {i} ");
+            ind=i;
         }
         
-        
-        return SysNum;
+        Array.Resize(ref arr, ind+1);
+        Array .Reverse(arr);
+        for(int i =0; i < arr.Length; i++)
+        {
+            System.Console.Write(arr[i]);
+        }
+    //     StringBuilder str = new();
+    //     for (int i = 0; i < arr.Length ; i++)
+    //     {
+    //         str[i]=Convert .ToChar(arr[i]);
+    //     }
+    // return str;
     }
 
 }
