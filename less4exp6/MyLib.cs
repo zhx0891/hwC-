@@ -1,5 +1,7 @@
+using System.Text;
 public static class MyLib
 {
+    
     public static int numToStep(int n, int step)
     {
         int incr = n;
@@ -98,18 +100,21 @@ public static class MyLib
         }
         return digNum;
     }
-    public static string[] giveMeNumSys(string digNum, int ss)
+    public static String  giveMeNumSys(string digNum, int ss)
     {
-        string SysNum;
-        string[] arr = new int [32];
+        string SysNum ="    test";
+        string[] arr = new string [32];
         int workNum = Convert .ToInt32(digNum);
-        for( int i = digNum .Length; (workNum /ss) > 0; i--)
+        System.Console.WriteLine(workNum );
+        for( int i = 0 ; workNum  > 0; i++)
         {
-            arr[i-1] = Convert .ToString (workNum%ss);
-            workNum = workNum /2;
-            System.Console.WriteLine(" "+arr [i-1]);
+            arr[i] = Convert .ToString (workNum%ss);
+            workNum = workNum /ss;
+            System.Console.WriteLine($" значение {arr[i]} индекс {i} ");
         }
-        return arr;
+        
+        
+        return SysNum;
     }
 
 }
