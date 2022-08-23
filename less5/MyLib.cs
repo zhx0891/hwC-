@@ -1,7 +1,7 @@
 using System.Text;
 public static class MyLib
 {
-    
+
     public static int numToStep(int n, int step)
     {
         int incr = n;
@@ -91,7 +91,7 @@ public static class MyLib
 
         for (int i = 0; i < ind; i++)
         {
-            
+
             if ((Convert.ToInt32(strBinNum[i]) == 49))
             {
                 digNum = digNum + numToStep(2, (ind - i));
@@ -100,7 +100,7 @@ public static class MyLib
         }
         return digNum;
     }
-    
+
     // public static string arrayToString(string [] arr)
     // {
     //     StringBuilder str = 
@@ -109,49 +109,68 @@ public static class MyLib
     //         System.Console.Write(arr[i]);
     //     }
     // }
-    
-    
-    public static void   giveMeNumSys(string digNum, int ss)
-    {
-        
-        string[] arr = new string [32];
-        int workNum = Convert .ToInt32(digNum);
-        int ind =0;
 
-        for( int i = 0 ; workNum  > 0; i++)
+
+    public static void giveMeNumSys(string digNum, int ss)
+    {
+
+        string[] arr = new string[32];
+        int workNum = Convert.ToInt32(digNum);
+        int ind = 0;
+
+        for (int i = 0; workNum > 0; i++)
         {
-            arr[i] = Convert .ToString (workNum%ss);
-            workNum = workNum /ss;
-            ind=i;
+            arr[i] = Convert.ToString(workNum % ss);
+            workNum = workNum / ss;
+            ind = i;
         }
-        
-        Array.Resize(ref arr, ind+1);
-        Array .Reverse(arr);
-        for(int i =0; i < arr.Length; i++)
+
+        Array.Resize(ref arr, ind + 1);
+        Array.Reverse(arr);
+        for (int i = 0; i < arr.Length; i++)
         {
             System.Console.Write(arr[i]);
         }
-    //     StringBuilder str = new();
-    //     for (int i = 0; i < arr.Length ; i++)
-    //     {
-    //         str[i]=Convert .ToChar(arr[i]);
-    //     }
-    // return str;
+        //     StringBuilder str = new();
+        //     for (int i = 0; i < arr.Length ; i++)
+        //     {
+        //         str[i]=Convert .ToChar(arr[i]);
+        //     }
+        // return str;
     }
 
-    public static int [] giveFullIntArray(int numSize, int arrLength  ) 
+    public static int[] giveFullIntArray(int numSize, int arrLength)
     {
-        int [] workArr = new int [arrLength];
-        Random rand = new Random ();
-        int min = numToStep(10, numSize-1);
+        int[] workArr = new int[arrLength];
+        Random rand = new Random();
+        int min = numToStep(10, numSize - 1);
         int max = numToStep(10, numSize);
 
-        for (int i = 0; i < arrLength ; i++)
+        for (int i = 0; i < arrLength; i++)
         {
-            workArr[i]=rand .Next (min, max);
+            workArr[i] = rand.Next(min, max);
         }
-        return workArr ;
-    }   
+        return workArr;
+    }
+    public static (double min, double max) sortDoubleArr(int size)
+    {
+        double[] arr = new double[size];
+        Random rand = new Random();
+        for (int i = 0; i < arr.Length; i++)
+        {
+            arr[i] = rand.NextDouble();
+        }
+        double max = arr[1];
+        double min = arr[1];
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] > max) { max = arr[i]; }
+            if (arr[i] < min) { min = arr[i]; }
+        }
+        return (min, max);
+
+    }
 
 }
 
