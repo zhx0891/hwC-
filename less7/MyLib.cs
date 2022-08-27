@@ -206,24 +206,24 @@ public static class MyLib
             System.Console.WriteLine();
             for (int j = 0; j < workArr.GetLength(1); j++)
             {
-                workArr[i, j] = Math.Round(rand.NextDouble() * 9, 0);
+                workArr[i, j] = Math.Round(rand.NextDouble() * 9, 1);
                 System.Console.Write($" {workArr[i, j]}");
             }
         }
         return workArr;
 
     }
-    public static int[] arithmeticMean(double[,] arr)
+    public static double[] arithmeticMean(int [,] arr)
     {
         int rows = arr.GetLength(1);
-        int[] arithMean = new int[rows];
+        double[] arithMean = new double[rows];
 
         for (int i = 0; i < arr.GetLength(1); i++)
         {
-            int summ = 0;
+            double summ = 0;
             for (int j = 0; j < arr.GetLength(0); j++)
             {
-                summ = summ + Convert.ToInt32(arr[j, i]);
+                summ = summ + arr[j, i];
             }
             arithMean[i] = summ/ arr.GetLength(0);
         }
@@ -231,6 +231,18 @@ public static class MyLib
 
 
         return arithMean;
+    }
+    public static int[,] convDoubleToIntArr(double [,] arr)
+    {
+        int [,] result = new int [arr.GetLength(0),arr .GetLength(1)];
+        for (int i = 0;  i < arr.GetLength(0) ; i++ )
+        {
+        for (int j = 0; j < arr .GetLength(1); j++)
+        {
+            result[i,j] = Convert .ToInt32(arr[i,j]);
+        }    
+        }
+        return result;
     }
 }
 
