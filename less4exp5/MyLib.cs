@@ -86,17 +86,31 @@ public static class MyLib
     {
         int digNum = 0;
         int ind = strBinNum.Length;
-        
+
         for (int i = 0; i < ind; i++)
         {
             // System.Console.WriteLine( Convert .ToInt32(strBinNum[i]) );
-            if(( Convert .ToInt32(strBinNum[i])== 49))
+            if ((Convert.ToInt32(strBinNum[i]) == 49))
             {
-                digNum =digNum + numToStep(2,(ind-i));
+                digNum = digNum + numToStep(2, (ind - i));
             }
 
         }
         return digNum;
     }
+    public static string[] giveMeNumSys(string digNum, int ss)
+    {
+        string SysNum;
+        string[] arr = new int [32];
+        int workNum = Convert .ToInt32(digNum);
+        for( int i = digNum .Length; (workNum /ss) > 0; i--)
+        {
+            arr[i-1] = Convert .ToString (workNum%ss);
+            workNum = workNum /2;
+            System.Console.WriteLine(" "+arr [i-1]);
+        }
+        return arr;
+    }
 
 }
+
