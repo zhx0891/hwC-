@@ -14,16 +14,20 @@ int m = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Выберите  столбец ");
 int n = Convert.ToInt32(Console.ReadLine());
 
-if ((m > exmArr.GetLength(0)||(m < 0)) || ((n > exmArr.GetLength(1))||(n<0)))
+if ((m > exmArr.GetLength(0) || (m < 0)) || ((n > exmArr.GetLength(1)) || (n < 0)))
 {
     System.Console.WriteLine("Такой позиции в этом массиве нет");
 }
 else
 {
-    System.Console.WriteLine(exmArr[m-1, n-1]);
+    System.Console.WriteLine(exmArr[m - 1, n - 1]);
 }
-int [] exmArr3 = new int [exmArr .GetLength(1)];
-exmArr3 = MyLib .arithmeticMean(exmArr);
+
+
+int[] exmArr3 = new int[exmArr.GetLength(1)];
+
+exmArr3 = MyLib.arithmeticMean(exmArr);
+
 for (int i = 0; i < exmArr3.Length; i++)
 {
     System.Console.Write($" {exmArr3[i]}");

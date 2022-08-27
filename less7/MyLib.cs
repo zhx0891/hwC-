@@ -186,54 +186,51 @@ public static class MyLib
         return count;
     }
 
-    public static (double x, double y, double [] arr) pointIntersectionLines(double k1, double k2, double b1 , double b2)
+    public static (double x, double y, double[] arr) pointIntersectionLines(double k1, double k2, double b1, double b2)
     {
-        double x = (b2-b1)/(k1-k2);
-        double y = (k1*x)+b1;
-        double [] arr = new double[2];
+        double x = (b2 - b1) / (k1 - k2);
+        double y = (k1 * x) + b1;
+        double[] arr = new double[2];
         arr[0] = x;
         arr[1] = y;
-        return (x,y, arr);
+        return (x, y, arr);
     }
 
-    public static double [,] giveMeFullTwoDimensionalArray (int m, int n)
+    public static double[,] giveMeFullTwoDimensionalArray(int m, int n)
     {
-        double [,] workArr = new double [m,n];
-        Random rand = new Random ();
-        
+        double[,] workArr = new double[m, n];
+        Random rand = new Random();
+
         for (int i = 0; i < workArr.GetLength(0); i++)
         {
             System.Console.WriteLine();
             for (int j = 0; j < workArr.GetLength(1); j++)
             {
-               workArr[i,j] =Math .Round( rand .NextDouble()*9, 0);
-               System.Console.Write($" {workArr[i,j]}");
+                workArr[i, j] = Math.Round(rand.NextDouble() * 9, 0);
+                System.Console.Write($" {workArr[i, j]}");
             }
         }
-        return workArr ;
+        return workArr;
 
-    }   
-    public static int [] arithmeticMean( double [,] arr)
+    }
+    public static int[] arithmeticMean(double[,] arr)
     {
         int rows = arr.GetLength(1);
-        int [] arithMean=new int [rows];
-        for (int ind = 0; ind < arithMean .Length; ind++)
+        int[] arithMean = new int[rows];
+
+        for (int i = 0; i < arr.GetLength(1); i++)
         {
-            
-            for (int i = 0; i < arr.GetLength(1); i++)
+            int summ = 0;
+            for (int j = 0; j < arr.GetLength(0); j++)
             {
-                int summ = 0;
-               for (int j = 0; j < arr.GetLength(0); j++)
-               {
-                summ=summ +Convert .ToInt32 (arr[i,j]);
-                arithMean[ind]=summ ;
-               } 
-                
+                summ = summ + Convert.ToInt32(arr[j, i]);
             }
-           
+            arithMean[i] = summ/ arr.GetLength(0);
         }
 
+
+
         return arithMean;
-    } 
+    }
 }
 
