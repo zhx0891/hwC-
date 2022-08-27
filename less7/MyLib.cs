@@ -212,6 +212,28 @@ public static class MyLib
         }
         return workArr ;
 
-    }    
+    }   
+    public static int [] arithmeticMean( double [,] arr)
+    {
+        int rows = arr.GetLength(1);
+        int [] arithMean=new int [rows];
+        for (int ind = 0; ind < arithMean .Length; ind++)
+        {
+            
+            for (int i = 0; i < arr.GetLength(1); i++)
+            {
+                int summ = 0;
+               for (int j = 0; j < arr.GetLength(0); j++)
+               {
+                summ=summ +Convert .ToInt32 (arr[i,j]);
+                arithMean[ind]=summ ;
+               } 
+                
+            }
+           
+        }
+
+        return arithMean;
+    } 
 }
 
