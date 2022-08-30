@@ -283,12 +283,36 @@ public static class MyLib
             arrSecond = sortLine(arrSecond);
             for (int j = 0; j < arr.GetLength(1); j++)
             {
-               arr[i, j] =  arrSecond[j];
+                arr[i, j] = arrSecond[j];
             }
 
         }
         return arr;
     }
+    public static void hideIt(string a)
+    {
+        System.Console.WriteLine();
+        System.Console.WriteLine(a);
+        Console.ReadLine();
+        System.Console.WriteLine();
+    }
+
+    public static double[] giveMeLineSumArr(double[,] arr)
+    {
+        double[] arrSumm = new double[arr.GetLength(0)];
+        for (int i = 0; i < arr.GetLength(0); i++)
+        {
+            double lineSum = 0;
+            for (int j = 0; j < arr.GetLength(1); j++)
+            {
+                lineSum = lineSum + arr[i, j];
+            }
+            arrSumm[i] = lineSum;
+
+        }
+        return arrSumm;
+    }
+
 
 }
 
