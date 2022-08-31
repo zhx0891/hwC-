@@ -40,13 +40,13 @@
 // MyLib .hideIt ("Задача 4. Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц. Нажмите ENTER.");
 
 
-double [,] test = {{1,2},
-                   {3,4},
-                   {5,6}};
+double [,] test = {{1.0,2.0},
+                   {3.0,4.0},
+                   {5.0,6.0}};
 
-double [,] test1 = {{1,2,3},
-                    {4,5,6}};
+double [,] test1 = {{1.0,2.0,3.0},
+                    {4.0,5.0,6.0}};
 double [,] test2 = new double[3,3];
-test2=MyLib .multiplicationArray(test,test1);
+test2 =MyLib .multiplicationArray(test,test1);
 
 
