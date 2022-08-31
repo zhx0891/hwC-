@@ -313,6 +313,27 @@ public static class MyLib
         return arrSumm;
     }
 
-
+    public static double[,] multiplicationArray(double[,] arr, double[,] arr1)
+    {
+        double[,] resArr = new double[3,3];
+        if (arr.GetLength(1) != arr1.GetLength(0))
+        {
+            System.Console.WriteLine("Эти массивы\\матрицы не согласованы, их произведение невозможно.");
+        }
+        else
+        {
+            
+            for (int i = 0; i < resArr.GetLength(0); i++)  //строка первой матрицы
+            {
+                System.Console.WriteLine();
+                for (int j = 0; j < resArr .GetLength(1); i++)
+                {
+                    resArr[i, j] = (arr[i, 0] * arr1[0, i]) + (arr[i, 1] * arr1[1, i]);
+                    System.Console.Write(resArr[i, j] + " ");
+                }
+            }
+        }
+        return resArr;
+    }
 }
 
