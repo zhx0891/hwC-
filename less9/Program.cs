@@ -2,3 +2,5 @@
 int M = 1;
 int N = 10;
 Lib.taskOne(M, N); 
+Lib .hideIt("Задача 2: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.");
+System.Console.WriteLine( Lib.taskTwo(M, N));

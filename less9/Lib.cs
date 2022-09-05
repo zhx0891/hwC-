@@ -17,4 +17,14 @@ public static class Lib
         }
     }
 
+    public static int taskTwo(int m, int n)
+    {
+        
+        if ( m<=n) 
+        {
+            return m + Lib.taskTwo (m+1, n);
+        }
+        return 0 ;
+
+    }
 }
