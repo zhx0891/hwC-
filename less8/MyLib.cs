@@ -328,7 +328,8 @@ public static class MyLib
                 System.Console.WriteLine();
                 for (int j = 0; j < resArr .GetLength(1); i++)
                 {
-                    resArr=(arr[i,0]*arr1[0,j])+(arr[i,1]*arr1[1,j]);
+                    resArr[i,j]=(arr[i,0]*arr1[0,j])+(arr[i,1]*arr1[1,j]);
+                    System.Console.Write(resArr[i,j]+" ");
                 }
             }
         }
