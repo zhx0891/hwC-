@@ -323,13 +323,20 @@ public static class MyLib
         else
         {
             
-            for (int i = 0; i < resArr.GetLength(0); i++)  //строка первой матрицы
-            {
+            for (int i = 0; i < resArr.GetLength(0); i++)  
+            {   
+
                 System.Console.WriteLine();
-                for (int j = 0; j < resArr .GetLength(1); i++)
+                for (int j = 0; j < resArr .GetLength(1); j++)
                 {
+<<<<<<< HEAD
                     resArr[i,j]=(arr[i,0]*arr1[0,j])+(arr[i,1]*arr1[1,j]);
                     System.Console.Write(resArr[i,j]+" ");
+=======
+                    resArr[i,j]=(arr[i,0]*arr1[0,j]) + (arr[i,1]*arr1[1,j]);
+                    System.Console.Write(resArr[i,j] + " " );
+                    
+>>>>>>> 2b97081e1227afd934829c7c46dad1aa73ad8b15
                 }
             }
         }
