@@ -5,4 +5,5 @@ Lib.taskOne(M, N);
 Lib .hideIt("Задача 2: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.");
 System.Console.WriteLine( Lib.taskTwo(M, N));
 Lib .hideIt("Задача 3: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n. ");
-System.Console.WriteLine(Lib .akkerman (M,N));
+
+System.Console.WriteLine(Lib .akMan (3,2));

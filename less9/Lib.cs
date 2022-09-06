@@ -27,11 +27,11 @@ public static class Lib
         return 0 ;
 
     }
-     public static int akkerman(int m, int n)
+     public static int akMan(int m, int n)
     {
         if (m < 0 || n < 0) { System.Console.WriteLine(" m и n должны быть больше нуля");};
         if (m == 0) return n + 1;
-        if (n == 0) return akkerman (m - 1, n);
-        return akkerman (m - 1, akkerman (m, n - 1));
+        if (n == 0) return akMan (m - 1, 1);
+        return akMan (m - 1, akMan (m, n - 1));
     }
 }
