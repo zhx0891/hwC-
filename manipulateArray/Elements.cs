@@ -9,7 +9,7 @@ public static class Elements
             System.Console.WriteLine();
             for (int j = 0; j < arr.GetLength(1); j++)
             {
-                arr[i, j] = rand.Next(0, 10);
+                arr[i, j] = rand.Next(10, 100);
                 System.Console.Write(arr[i, j] + " ");
             }
         }
@@ -28,26 +28,46 @@ public static class Elements
         }
     }
 
-    public static int [,] replaceStrToRows(int [,] arr)
+    public static int[,] replaceStrToRows(int[,] arr)
     {
-        int[,] arr2 = new int [arr.GetLength(0),arr.GetLength(1)]; 
-        if(arr.GetLength(0)==arr.GetLength(1))
+        int[,] arr2 = new int[arr.GetLength(0), arr.GetLength(1)];
+        if (arr.GetLength(0) == arr.GetLength(1))
         {
             for (int i = 0; i < arr.GetLength(0); i++)
             {
                 for (int j = 0; j < arr.GetLength(1); j++)
                 {
-                    arr2[j,i]=arr[i,j];
+                    arr2[j, i] = arr[i, j];
                 }
             }
-            
-            
-            return arr2 ;
+
+
+            return arr2;
         }
         else
         {
             System.Console.WriteLine(" этот массив невозможно переверуть");
         }
         return arr;
+    }
+    public static (int minX, int minY, int min) giveMeMin(int[,] arr)
+    {
+        int minX = 0;
+        int minY = 0;
+        int min = arr[0, 0];
+        for (int i = 0; i < arr.GetLength(0); i++)
+        {
+            for (int j = 0; j < arr.GetLength(1); j++)
+            {
+                if (arr[i, j] < min)
+                {
+                    min = arr[i, j];
+                    minX = i;
+                    minY = j;
+                }
+            }
+
+        }
+        return (minX, minY, min);
     }
 }
