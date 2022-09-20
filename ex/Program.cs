@@ -1,4 +1,5 @@
-﻿// 39. Найти произведение пар чисел в одномерном массиве.
+﻿using System;
+// 39. Найти произведение пар чисел в одномерном массиве.
 // int [] arr = new int [10];
 // for (int i = 0; i < arr. Length; i++)
 // {
@@ -26,3 +27,14 @@
 //         System.Console.Write(arr[i, j] + " ");
 //     }
 // }
+int [] numFibo = {0,1};
+int count = 30;
+for (int i = 2; i < count; i++)
+{
+   Array .Resize( ref numFibo, numFibo.Length + 1);
+   numFibo[i]=numFibo[i-1]+numFibo[i-2];
+}
+for (int i = 0; i < numFibo.Length; i++)
+{
+    System.Console.Write(numFibo[i]+" ");
+}
