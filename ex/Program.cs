@@ -45,15 +45,35 @@
 //  которая гласит, что сумма 2 сторон треугольника должна быть больше третьей стороны
 
 
-double [] arrX = {3, 5, 1};  //координаты x для трёх точек
-double [] arrY = {2, 6, 3};  //координаты y для трёх точек
+// double [] arrX = {3, 5, 1};  //координаты x для трёх точек
+// double [] arrY = {2, 6, 3};  //координаты y для трёх точек
 
-// Длинна отрезка d^2= (х2— х1)^2+ (y2— y1)^2
-double lineOne = Math .Sqrt (Math .Pow((arrX[1]-arrX[0]), 2)-Math .Pow((arrY[1]-arrY[0]), 2));
-double lineSecond = Math .Sqrt (Math .Pow((arrX[1]-arrX[2]), 2)-Math .Pow((arrY[1]-arrY[2]), 2));
-double lineThird = Math .Sqrt (Math .Pow((arrX[2]-arrX[0]), 2)-Math .Pow((arrY[2]-arrY[0]), 2));
-// double [] arrPoints = {lineOne,lineSecond,lineThird};
-if(lineOne+lineSecond > lineThird) {System.Console.WriteLine(" да,  это точки одного треугольника");}
-if(lineOne+lineThird > lineSecond) {System.Console.WriteLine(" да,  это точки одного треугольника");}
-if(lineThird+lineSecond > lineOne) {System.Console.WriteLine(" да,  это точки одного треугольника");}
-else{System.Console.WriteLine(" нет эти точки не подходят");}
+// // Длинна отрезка d^2= (х2— х1)^2+ (y2— y1)^2
+// double lineOne = Math .Sqrt (Math .Pow((arrX[1]-arrX[0]), 2)-Math .Pow((arrY[1]-arrY[0]), 2));
+// double lineSecond = Math .Sqrt (Math .Pow((arrX[1]-arrX[2]), 2)-Math .Pow((arrY[1]-arrY[2]), 2));
+// double lineThird = Math .Sqrt (Math .Pow((arrX[2]-arrX[0]), 2)-Math .Pow((arrY[2]-arrY[0]), 2));
+// // double [] arrPoints = {lineOne,lineSecond,lineThird};
+// if(lineOne+lineSecond > lineThird) {System.Console.WriteLine(" да,  это точки одного треугольника");}
+// if(lineOne+lineThird > lineSecond) {System.Console.WriteLine(" да,  это точки одного треугольника");}
+// if(lineThird+lineSecond > lineOne) {System.Console.WriteLine(" да,  это точки одного треугольника");}
+// else{System.Console.WriteLine(" нет эти точки не подходят");}
+
+// 54. В матрице чисел найти сумму элементов главной диагонали
+
+int [,] arr = new int [5,5];
+for (int i = 0; i < arr.GetLength(0); i++)
+{
+    System.Console.WriteLine();
+    for (int j = 0; j < arr.GetLength(1); j++)
+    {
+       arr[i,j]=i+j;
+       System.Console.Write(arr[i,j] + " ");
+    }
+}
+System.Console.WriteLine();
+int summ = 0;
+for (int i = 0; i < arr.GetLength(0); i++)
+{
+    summ=summ+arr[i,i];
+}
+System.Console.WriteLine(summ);
